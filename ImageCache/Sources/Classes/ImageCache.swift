@@ -29,4 +29,8 @@ public class ImageCache {
 
         memoryCache.name = identifier
     }
+
+    public convenience init() {
+        self.init(identifier: "ImageCache")
+    }
 }
