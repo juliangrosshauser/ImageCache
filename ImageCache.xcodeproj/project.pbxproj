@@ -10,6 +10,7 @@
 		B9273DE71B3DFE9300E2EB0E /* ImageCache.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9273DDC1B3DFE9300E2EB0E /* ImageCache.framework */; };
 		B9273DFC1B3DFFB500E2EB0E /* ImageCache.h in Headers */ = {isa = PBXBuildFile; fileRef = B9273DFA1B3DFFB500E2EB0E /* ImageCache.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B9273E041B3DFFBF00E2EB0E /* ImageCacheTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9273E021B3DFFBF00E2EB0E /* ImageCacheTests.swift */; };
+		B9C479B11B3F06600005EFCB /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9C479B01B3F06600005EFCB /* ImageCache.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +30,7 @@
 		B9273DFA1B3DFFB500E2EB0E /* ImageCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageCache.h; sourceTree = "<group>"; };
 		B9273DFF1B3DFFBF00E2EB0E /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B9273E021B3DFFBF00E2EB0E /* ImageCacheTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCacheTests.swift; sourceTree = "<group>"; };
+		B9C479B01B3F06600005EFCB /* ImageCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageCache.swift; path = ImageCache/Sources/Classes/ImageCache.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +90,7 @@
 		B9273DF91B3DFFB500E2EB0E /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				B9C479B41B3F07AC0005EFCB /* Classes */,
 				B9273DFA1B3DFFB500E2EB0E /* ImageCache.h */,
 			);
 			path = Sources;
@@ -124,6 +127,15 @@
 				B9273E021B3DFFBF00E2EB0E /* ImageCacheTests.swift */,
 			);
 			path = Classes;
+			sourceTree = "<group>";
+		};
+		B9C479B41B3F07AC0005EFCB /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				B9C479B01B3F06600005EFCB /* ImageCache.swift */,
+			);
+			name = Classes;
+			path = ../..;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -233,6 +245,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B9C479B11B3F06600005EFCB /* ImageCache.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
