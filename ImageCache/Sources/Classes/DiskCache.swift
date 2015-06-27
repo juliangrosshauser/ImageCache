@@ -30,4 +30,8 @@ public class DiskCache {
             path = cachePath.stringByAppendingPathComponent("DiskCache.\(identifier)")
         }
     }
+
+    public convenience init() {
+        self.init(identifier: "DiskCache")
+    }
 }
