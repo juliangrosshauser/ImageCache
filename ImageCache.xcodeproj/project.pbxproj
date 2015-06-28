@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B917FC2E1B4030CC0040E97D /* DiskCache.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B917FC261B40306D0040E97D /* DiskCache.framework */; };
 		B9273DE71B3DFE9300E2EB0E /* ImageCache.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9273DDC1B3DFE9300E2EB0E /* ImageCache.framework */; };
 		B9273DFC1B3DFFB500E2EB0E /* ImageCache.h in Headers */ = {isa = PBXBuildFile; fileRef = B9273DFA1B3DFFB500E2EB0E /* ImageCache.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B9273E041B3DFFBF00E2EB0E /* ImageCacheTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9273E021B3DFFBF00E2EB0E /* ImageCacheTests.swift */; };
@@ -60,6 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B917FC2E1B4030CC0040E97D /* DiskCache.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
