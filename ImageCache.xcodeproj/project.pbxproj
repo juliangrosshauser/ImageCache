@@ -28,6 +28,13 @@
 			remoteGlobalIDString = B917FBCD1B40244E0040E97D;
 			remoteInfo = DiskCacheTests;
 		};
+		B917FC2C1B4030960040E97D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B917FC201B40306D0040E97D /* DiskCache.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = B917FBC21B40244E0040E97D;
+			remoteInfo = DiskCache;
+		};
 		B9273DE81B3DFE9300E2EB0E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = B9273DD31B3DFE9300E2EB0E /* Project object */;
@@ -189,6 +196,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				B917FC2D1B4030960040E97D /* PBXTargetDependency */,
 			);
 			name = ImageCache;
 			productName = ImageCache;
@@ -308,6 +316,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		B917FC2D1B4030960040E97D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = DiskCache;
+			targetProxy = B917FC2C1B4030960040E97D /* PBXContainerItemProxy */;
+		};
 		B9273DE91B3DFE9300E2EB0E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = B9273DDB1B3DFE9300E2EB0E /* ImageCache */;
