@@ -1,0 +1,3 @@
+[submodule "DiskCache"]
+	path = DiskCache
+	url = https://github.com/juliangrosshauser/DiskCache.git
