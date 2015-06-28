@@ -24,11 +24,10 @@ public class DiskCache {
         let paths = NSSearchPathForDirectoriesInDomains(.CachesDirectory, .UserDomainMask, true)
         let cachePath = paths.first!
 
-        if let bundleIdentifier = NSBundle.mainBundle().bundleIdentifier {
-            path = cachePath.stringByAppendingPathComponent("\(bundleIdentifier).\(identifier)")
-        } else {
-            path = cachePath.stringByAppendingPathComponent("DiskCache.\(identifier)")
-        }
+        // use "DiskCache" as `bundleIdentifier` iff `mainBundle()`s `bundleIdentifier` is `nil`
+        let bundleIdentifier = NSBundle.mainBundle().bundleIdentifier ?? "DiskCache"
+
+        path = cachePath.stringByAppendingPathComponent("\(bundleIdentifier).\(identifier)")
     }
 
     public convenience init() {
