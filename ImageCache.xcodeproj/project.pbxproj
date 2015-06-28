@@ -14,6 +14,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		B917FC251B40306D0040E97D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B917FC201B40306D0040E97D /* DiskCache.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = B917FBC31B40244E0040E97D;
+			remoteInfo = DiskCache;
+		};
+		B917FC271B40306D0040E97D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B917FC201B40306D0040E97D /* DiskCache.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = B917FBCD1B40244E0040E97D;
+			remoteInfo = DiskCacheTests;
+		};
 		B9273DE81B3DFE9300E2EB0E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = B9273DD31B3DFE9300E2EB0E /* Project object */;
@@ -24,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B917FC201B40306D0040E97D /* DiskCache.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = DiskCache.xcodeproj; path = DiskCache/DiskCache.xcodeproj; sourceTree = "<group>"; };
 		B9273DDC1B3DFE9300E2EB0E /* ImageCache.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ImageCache.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9273DE61B3DFE9300E2EB0E /* ImageCacheTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ImageCacheTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9273DF81B3DFFB500E2EB0E /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -52,9 +67,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B917FC211B40306D0040E97D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B917FC261B40306D0040E97D /* DiskCache.framework */,
+				B917FC281B40306D0040E97D /* DiskCacheTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		B9273DD21B3DFE9300E2EB0E = {
 			isa = PBXGroup;
 			children = (
+				B917FC201B40306D0040E97D /* DiskCache.xcodeproj */,
 				B9273DF61B3DFFB500E2EB0E /* ImageCache */,
 				B9273DFD1B3DFFBF00E2EB0E /* ImageCacheTests */,
 				B9273DDD1B3DFE9300E2EB0E /* Products */,
@@ -215,6 +240,12 @@
 			mainGroup = B9273DD21B3DFE9300E2EB0E;
 			productRefGroup = B9273DDD1B3DFE9300E2EB0E /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = B917FC211B40306D0040E97D /* Products */;
+					ProjectRef = B917FC201B40306D0040E97D /* DiskCache.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				B9273DDB1B3DFE9300E2EB0E /* ImageCache */,
@@ -222,6 +253,23 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		B917FC261B40306D0040E97D /* DiskCache.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = DiskCache.framework;
+			remoteRef = B917FC251B40306D0040E97D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		B917FC281B40306D0040E97D /* DiskCacheTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = DiskCacheTests.xctest;
+			remoteRef = B917FC271B40306D0040E97D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		B9273DDA1B3DFE9300E2EB0E /* Resources */ = {
@@ -428,6 +476,7 @@
 				B9273DF21B3DFE9300E2EB0E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B9273DF31B3DFE9300E2EB0E /* Build configuration list for PBXNativeTarget "ImageCacheTests" */ = {
 			isa = XCConfigurationList;
@@ -436,6 +485,7 @@
 				B9273DF51B3DFE9300E2EB0E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
