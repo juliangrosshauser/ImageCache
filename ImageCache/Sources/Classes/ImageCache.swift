@@ -6,6 +6,8 @@
 //  Copyright © 2015 Julian Grosshauser. All rights reserved.
 //
 
+import DiskCache
+
 /**
 Caches images in memory and on disk
 */
