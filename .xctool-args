@@ -1,0 +1,7 @@
+[
+  "-project", "ImageCache.xcodeproj",
+  "-scheme", "ImageCache",
+  "-configuration", "Debug",
+  "-sdk", "iphonesimulator",
+  "-arch", "i386"
+]
