@@ -9,6 +9,9 @@
 import XCTest
 import ImageCache
 
+let imageCacheIdentifier = "TestImageCache"
+let imageCache = ImageCache(identifier: imageCacheIdentifier)
+
 class ImageCacheTests: XCTestCase {
     
     override func setUp() {
@@ -16,17 +19,14 @@ class ImageCacheTests: XCTestCase {
     }
 
     func testDiskCachePathGetsCorrectlySet() {
-        let identifier = "TestImageCache"
-        let imageCache = ImageCache(identifier: identifier)
-
         let paths = NSSearchPathForDirectoriesInDomains(.CachesDirectory, .UserDomainMask, true)
         let cachePath = paths.first!
         let diskCachePath: String
 
         if let bundleIdentifier = NSBundle.mainBundle().bundleIdentifier {
-            diskCachePath = cachePath.stringByAppendingPathComponent("\(bundleIdentifier).\(identifier)")
+            diskCachePath = cachePath.stringByAppendingPathComponent("\(bundleIdentifier).\(imageCacheIdentifier)")
         } else {
-            diskCachePath = cachePath.stringByAppendingPathComponent("DiskCache.\(identifier)")
+            diskCachePath = cachePath.stringByAppendingPathComponent("DiskCache.\(imageCacheIdentifier)")
         }
 
         XCTAssertEqual(diskCachePath, imageCache.diskCachePath, "diskCachePath wasn't correctly set")
