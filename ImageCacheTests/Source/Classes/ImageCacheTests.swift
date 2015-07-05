@@ -19,15 +19,10 @@ class ImageCacheTests: XCTestCase {
     }
 
     func testDiskCachePathGetsCorrectlySet() {
-        let paths = NSSearchPathForDirectoriesInDomains(.CachesDirectory, .UserDomainMask, true)
-        let cachePath = paths.first!
-        let diskCachePath: String
+        let bundleIdentifier = NSBundle.mainBundle().bundleIdentifier ?? "DiskCache"
 
-        if let bundleIdentifier = NSBundle.mainBundle().bundleIdentifier {
-            diskCachePath = cachePath.stringByAppendingPathComponent("\(bundleIdentifier).\(imageCacheIdentifier)")
-        } else {
-            diskCachePath = cachePath.stringByAppendingPathComponent("DiskCache.\(imageCacheIdentifier)")
-        }
+        let paths = NSSearchPathForDirectoriesInDomains(.CachesDirectory, .UserDomainMask, true)
+        let diskCachePath = paths.first!.stringByAppendingPathComponent("\(bundleIdentifier).\(imageCacheIdentifier)")
 
         XCTAssertEqual(diskCachePath, imageCache.diskCachePath, "diskCachePath wasn't correctly set")
     }
