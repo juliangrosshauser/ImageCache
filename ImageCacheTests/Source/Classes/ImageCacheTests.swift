@@ -19,7 +19,7 @@ class ImageCacheTests: XCTestCase {
         super.tearDown()
     }
 
-    func testDiskCachePath() {
+    func testDiskCachePathGetsCorrectlySet() {
         let identifier = "TestImageCache"
         let imageCache = ImageCache(identifier: identifier)
 
