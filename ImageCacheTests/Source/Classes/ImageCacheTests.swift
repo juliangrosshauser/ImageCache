@@ -14,10 +14,6 @@ class ImageCacheTests: XCTestCase {
     override func setUp() {
         super.setUp()
     }
-    
-    override func tearDown() {
-        super.tearDown()
-    }
 
     func testDiskCachePathGetsCorrectlySet() {
         let identifier = "TestImageCache"
