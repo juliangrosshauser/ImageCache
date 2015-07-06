@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B917FC2E1B4030CC0040E97D /* DiskCache.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B917FC261B40306D0040E97D /* DiskCache.framework */; };
+		B917FC3B1B403C720040E97D /* ImageCacheError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B917FC3A1B403C720040E97D /* ImageCacheError.swift */; };
 		B9273DE71B3DFE9300E2EB0E /* ImageCache.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9273DDC1B3DFE9300E2EB0E /* ImageCache.framework */; };
 		B9273DFC1B3DFFB500E2EB0E /* ImageCache.h in Headers */ = {isa = PBXBuildFile; fileRef = B9273DFA1B3DFFB500E2EB0E /* ImageCache.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B9273E041B3DFFBF00E2EB0E /* ImageCacheTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9273E021B3DFFBF00E2EB0E /* ImageCacheTests.swift */; };
@@ -47,6 +48,7 @@
 
 /* Begin PBXFileReference section */
 		B917FC201B40306D0040E97D /* DiskCache.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = DiskCache.xcodeproj; path = DiskCache/DiskCache.xcodeproj; sourceTree = "<group>"; };
+		B917FC3A1B403C720040E97D /* ImageCacheError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCacheError.swift; sourceTree = "<group>"; };
 		B9273DDC1B3DFE9300E2EB0E /* ImageCache.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ImageCache.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9273DE61B3DFE9300E2EB0E /* ImageCacheTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ImageCacheTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9273DF81B3DFFB500E2EB0E /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -83,6 +85,14 @@
 				B917FC281B40306D0040E97D /* DiskCacheTests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		B917FC391B403C720040E97D /* Enumerations */ = {
+			isa = PBXGroup;
+			children = (
+				B917FC3A1B403C720040E97D /* ImageCacheError.swift */,
+			);
+			path = Enumerations;
 			sourceTree = "<group>";
 		};
 		B9273DD21B3DFE9300E2EB0E = {
@@ -125,6 +135,7 @@
 			isa = PBXGroup;
 			children = (
 				B9C479B41B3F07AC0005EFCB /* Classes */,
+				B917FC391B403C720040E97D /* Enumerations */,
 				B9273DFA1B3DFFB500E2EB0E /* ImageCache.h */,
 			);
 			path = Sources;
@@ -304,6 +315,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B9C479B11B3F06600005EFCB /* ImageCache.swift in Sources */,
+				B917FC3B1B403C720040E97D /* ImageCacheError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
