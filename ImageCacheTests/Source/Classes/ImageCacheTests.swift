@@ -11,6 +11,7 @@ import ImageCache
 
 let imageCacheIdentifier = "TestImageCache"
 let imageCache = ImageCache(identifier: imageCacheIdentifier)
+let imageCacheFileManager = NSFileManager()
 
 class ImageCacheTests: XCTestCase {
     
