@@ -69,4 +69,24 @@ public class ImageCache {
             completionHandler?(.Success())
         }
     }
+
+    //MARK: Remove Image
+
+    /**
+    Remove all cached images asynchronously
+
+    - Parameter fromDisk: If true, all cached images will not only be removed from the memory cache, but also from the disk cache
+    - Parameter completionHandler: Called on main thread after all cached images got removed
+
+    - Note: `Result` parameter of `completionHandler` contains `.Success` or `.Failure`.
+    */
+    public func removeAllImagesFromDisk(fromDisk: Bool, completionHandler: (Result<Void> -> Void)?) {
+        memoryCache.removeAllObjects()
+
+        if fromDisk {
+            diskCache.removeAllData(completionHandler: completionHandler)
+        } else {
+            completionHandler?(.Success())
+        }
+    }
 }
