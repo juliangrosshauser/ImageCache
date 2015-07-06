@@ -35,4 +35,38 @@ public class ImageCache {
     public convenience init() {
         self.init(identifier: "ImageCache")
     }
+
+    //MARK: Cache Image
+
+    /**
+    Cache image asynchronously
+    
+    - Parameter image: Image to cache
+    - Parameter forKey: Key for image
+    - Parameter onDisk: Whether to cache image on disk
+    - Parameter completionHandler: Called on main thread after image is cached
+    
+    - Warning: Doesn't throw when error happens asynchronously. Check `.Success` or `.Failure` in `Result` parameter of `completionHandler` instead.
+    */
+    public func cacheImage(image: UIImage, forKey key: String, onDisk: Bool, completionHandler: (Result<Void> -> Void)?) throws {
+        guard let imageData = UIImagePNGRepresentation(image) else {
+            throw ImageCacheError.ImageDataError
+        }
+
+        if key.isEmpty {
+            throw ImageCacheError.EmptyKey
+        }
+
+        memoryCache.setObject(image, forKey: key, cost: imageData.length)
+
+        if onDisk {
+            do {
+                try diskCache.cacheData(imageData, forKey: key, completionHandler: completionHandler)
+            } catch {
+                throw error
+            }
+        } else {
+            completionHandler?(.Success())
+        }
+    }
 }
