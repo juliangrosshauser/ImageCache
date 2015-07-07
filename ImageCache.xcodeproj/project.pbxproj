@@ -14,6 +14,7 @@
 		B9273E041B3DFFBF00E2EB0E /* ImageCacheTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9273E021B3DFFBF00E2EB0E /* ImageCacheTests.swift */; };
 		B9AF1D0F1B4C7845006769F3 /* TestImages in Resources */ = {isa = PBXBuildFile; fileRef = B9AF1D0E1B4C7845006769F3 /* TestImages */; };
 		B9C479B11B3F06600005EFCB /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9C479B01B3F06600005EFCB /* ImageCache.swift */; };
+		B9E2FD9C1B4B279100195F71 /* CachingImageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E2FD9B1B4B279100195F71 /* CachingImageTests.swift */; };
 		B9E2FD9F1B4B27E800195F71 /* TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E2FD9E1B4B27E800195F71 /* TestHelpers.swift */; };
 /* End PBXBuildFile section */
 
@@ -59,6 +60,7 @@
 		B9273E021B3DFFBF00E2EB0E /* ImageCacheTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCacheTests.swift; sourceTree = "<group>"; };
 		B9AF1D0E1B4C7845006769F3 /* TestImages */ = {isa = PBXFileReference; lastKnownFileType = folder; path = TestImages; sourceTree = "<group>"; };
 		B9C479B01B3F06600005EFCB /* ImageCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageCache.swift; path = ImageCache/Sources/Classes/ImageCache.swift; sourceTree = "<group>"; };
+		B9E2FD9B1B4B279100195F71 /* CachingImageTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CachingImageTests.swift; sourceTree = "<group>"; };
 		B9E2FD9E1B4B27E800195F71 /* TestHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestHelpers.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -176,6 +178,7 @@
 			children = (
 				B9273E021B3DFFBF00E2EB0E /* ImageCacheTests.swift */,
 				B9E2FD9E1B4B27E800195F71 /* TestHelpers.swift */,
+				B9E2FD9B1B4B279100195F71 /* CachingImageTests.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -331,6 +334,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B9273E041B3DFFBF00E2EB0E /* ImageCacheTests.swift in Sources */,
+				B9E2FD9C1B4B279100195F71 /* CachingImageTests.swift in Sources */,
 				B9E2FD9F1B4B27E800195F71 /* TestHelpers.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
