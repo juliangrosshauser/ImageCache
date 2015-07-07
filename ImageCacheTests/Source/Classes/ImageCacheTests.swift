@@ -12,6 +12,7 @@ import ImageCache
 let imageCacheIdentifier = "TestImageCache"
 let imageCache = ImageCache(identifier: imageCacheIdentifier)
 let imageCacheFileManager = NSFileManager()
+let expectationTimeout = 0.05
 
 class ImageCacheTests: XCTestCase {
     
