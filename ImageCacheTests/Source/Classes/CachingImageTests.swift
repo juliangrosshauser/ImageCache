@@ -20,7 +20,7 @@ class CachingImageTests: XCTestCase {
 
     func testCachingImageOnDiskCallsCompletionHandlerWithSuccess() {
         let key = "TestCachingData"
-        let image = testImageWithName("Square", fileExtension: "png")
+        let image = testImageWithName("Square", fileExtension: .PNG)
 
         let completionExpectation = expectationWithDescription("completionHandler called")
 

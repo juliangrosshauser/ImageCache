@@ -23,7 +23,7 @@ func clearAllCachedImages() {
     }
 }
 
-func testImageWithName(name: String, fileExtension: String) -> UIImage {
+func testImageWithName(name: String, fileExtension: FileExtension) -> UIImage {
     let resourceURL = NSBundle(forClass: ImageCacheTests.self).resourceURL!
     let testImagesDirectory = resourceURL.URLByAppendingPathComponent("TestImages", isDirectory: true)
 
