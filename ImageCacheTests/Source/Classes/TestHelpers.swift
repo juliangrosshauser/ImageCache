@@ -22,3 +22,26 @@ func clearAllCachedImages() {
         XCTFail("Error clearing disk cache: \(error)")
     }
 }
+
+func testImageWithName(name: String, fileExtension: String) -> UIImage {
+    let resourceURL = NSBundle(forClass: ImageCacheTests.self).resourceURL!
+    let testImagesDirectory = resourceURL.URLByAppendingPathComponent("TestImages", isDirectory: true)
+
+    guard let testImagePath = testImagesDirectory.URLByAppendingPathComponent("\(name).\(fileExtension)").path else {
+        XCTFail("Test image with name \(name) and file extension \(fileExtension) doesn't exist")
+
+        // the following return statement will never be executed because of the above `XCTFail()`,
+        // but the Swift compiler is only happy when the `guard` body isn't falling through
+        return UIImage()
+    }
+
+    guard let testImage = UIImage(contentsOfFile: testImagePath) else {
+        XCTFail("Test image with name \(name) and file extension \(fileExtension) can't be loaded")
+
+        // the following return statement will never be executed because of the above `XCTFail()`,
+        // but the Swift compiler is only happy when the `guard` body isn't falling through
+        return UIImage()
+    }
+
+    return testImage
+}
