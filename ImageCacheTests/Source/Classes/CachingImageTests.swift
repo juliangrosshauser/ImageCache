@@ -40,4 +40,27 @@ class CachingImageTests: XCTestCase {
 
         waitForExpectationsWithTimeout(expectationTimeout, handler: nil)
     }
+    
+    func testCachingImageOnlyInMemoryCallsCompletionHandlerWithSuccess() {
+        let key = "TestCachingData"
+        let image = testImageWithName("Square", fileExtension: .PNG)
+        
+        let completionExpectation = expectationWithDescription("completionHandler called")
+        
+        let completionHandler: Result<Void> -> Void = { result in
+            if case .Failure(let error) = result {
+                XCTFail("Caching image failed: \(error)")
+            }
+            
+            completionExpectation.fulfill()
+        }
+        
+        do {
+            try imageCache.cacheImage(image, forKey: key, onDisk: false, completionHandler: completionHandler)
+        } catch {
+            XCTFail("Caching image failed: \(error)")
+        }
+        
+        waitForExpectationsWithTimeout(expectationTimeout, handler: nil)
+    }
 }
