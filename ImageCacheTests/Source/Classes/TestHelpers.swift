@@ -45,3 +45,9 @@ func testImageWithName(name: String, fileExtension: FileExtension) -> UIImage {
 
     return testImage
 }
+
+func cachedImageExistsOnDiskForKey(key: String) -> Bool {
+    let filePath = imageCache.diskCachePath.stringByAppendingPathComponent(key)
+    
+    return imageCacheFileManager.fileExistsAtPath(filePath)
+}
