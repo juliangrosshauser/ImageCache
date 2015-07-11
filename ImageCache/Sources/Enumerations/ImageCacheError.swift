@@ -13,4 +13,5 @@ public enum ImageCacheError: ErrorType {
 
     case EmptyKey
     case ImageDataError
+    case CacheMiss
 }
