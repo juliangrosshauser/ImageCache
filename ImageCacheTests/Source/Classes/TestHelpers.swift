@@ -55,8 +55,12 @@ func cachedImageExistsOnDiskForKey(key: String) -> Bool {
 func cachedImageOnDiskForKey(key: String) throws -> UIImage {
     let filePath = imageCache.diskCachePath.stringByAppendingPathComponent(key)
 
-    if let image = UIImage(contentsOfFile: filePath) {
-        return image
+    if let data = NSData(contentsOfFile: filePath) {
+        if let image = UIImage(data: data, scale: UIScreen.mainScreen().scale) {
+            return image
+        } else {
+            throw ImageCacheError.ImageDataError
+        }
     } else {
         throw ImageCacheError.CacheMiss
     }
