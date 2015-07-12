@@ -17,6 +17,7 @@
 		B9C479B11B3F06600005EFCB /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9C479B01B3F06600005EFCB /* ImageCache.swift */; };
 		B9E2FD9C1B4B279100195F71 /* CachingImageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E2FD9B1B4B279100195F71 /* CachingImageTests.swift */; };
 		B9E2FD9F1B4B27E800195F71 /* TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E2FD9E1B4B27E800195F71 /* TestHelpers.swift */; };
+		B9E3FF3C1B51CB6200D6809B /* RetrievingImageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E3FF3B1B51CB6200D6809B /* RetrievingImageTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +65,7 @@
 		B9C479B01B3F06600005EFCB /* ImageCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageCache.swift; path = ImageCache/Sources/Classes/ImageCache.swift; sourceTree = "<group>"; };
 		B9E2FD9B1B4B279100195F71 /* CachingImageTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CachingImageTests.swift; sourceTree = "<group>"; };
 		B9E2FD9E1B4B27E800195F71 /* TestHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestHelpers.swift; sourceTree = "<group>"; };
+		B9E3FF3B1B51CB6200D6809B /* RetrievingImageTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RetrievingImageTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,6 +184,7 @@
 				B9273E021B3DFFBF00E2EB0E /* ImageCacheTests.swift */,
 				B9E2FD9E1B4B27E800195F71 /* TestHelpers.swift */,
 				B9E2FD9B1B4B279100195F71 /* CachingImageTests.swift */,
+				B9E3FF3B1B51CB6200D6809B /* RetrievingImageTests.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -347,6 +350,7 @@
 				B9273E041B3DFFBF00E2EB0E /* ImageCacheTests.swift in Sources */,
 				B9E2FD9C1B4B279100195F71 /* CachingImageTests.swift in Sources */,
 				B9E2FD9F1B4B27E800195F71 /* TestHelpers.swift in Sources */,
+				B9E3FF3C1B51CB6200D6809B /* RetrievingImageTests.swift in Sources */,
 				B9AF1D111B4C866B006769F3 /* FileExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
