@@ -102,11 +102,7 @@ public class ImageCache {
                 }
             }
 
-            do {
-                try diskCache.retrieveDataForKey(key, completionHandler: dataCompletionHandler)
-            } catch {
-                completionHandler(.Failure(error))
-            }
+            try diskCache.retrieveDataForKey(key, completionHandler: dataCompletionHandler)
         }
     }
 
