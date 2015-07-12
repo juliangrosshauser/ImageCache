@@ -70,6 +70,50 @@ public class ImageCache {
         }
     }
 
+    //MARK: Retrieve image
+
+    /**
+    Retrieve image asynchronously
+
+    - Parameter key: Key for image
+    - Parameter completionHandler: Called on main thread with retrieved image or error as parameter
+    
+    - Note: Retrieves image with scale of device's screen.
+
+    - Warning: Doesn't throw when error happens asynchronously. Check `.Success` or `.Failure` in `Result` parameter of `completionHandler` instead.
+    */
+    public func retrieveImageForKey(key: String, completionHandler: Result<UIImage> -> Void) throws {
+        if key.isEmpty {
+            throw ImageCacheError.EmptyKey
+        }
+
+        // try to retrieve image from memory cache first
+        if let imageData = memoryCache.objectForKey(key) as? NSData, let image = UIImage(data: imageData, scale: UIScreen.mainScreen().scale) {
+            completionHandler(.Success(image))
+        } else {
+            // if image couldn't be retrieved from memory cache, try to retrieve it from disk cache
+            let dataCompletionHandler: Result<NSData> -> Void = { result in
+                switch result {
+                case .Success(let imageData):
+                    if let image = UIImage(data: imageData, scale: UIScreen.mainScreen().scale) {
+                        completionHandler(.Success(image))
+                    } else {
+                        completionHandler(.Failure(ImageCacheError.ImageDataError))
+                    }
+
+                case .Failure(let error):
+                    completionHandler(.Failure(error))
+                }
+            }
+
+            do {
+                try diskCache.retrieveDataForKey(key, completionHandler: dataCompletionHandler)
+            } catch {
+                completionHandler(.Failure(error))
+            }
+        }
+    }
+
     //MARK: Remove Image
 
     /**
