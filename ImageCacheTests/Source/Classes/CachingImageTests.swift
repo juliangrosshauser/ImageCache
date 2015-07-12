@@ -94,4 +94,37 @@ class CachingImageTests: XCTestCase {
         
         waitForExpectationsWithTimeout(expectationTimeout, handler: nil)
     }
+
+    func testCachingImageOnDiskCreatesFileInDiskCachePathWithExpectedData() {
+        let key = "TestCachingData"
+        let expectedImage = testImageWithName("Square", fileExtension: .PNG)
+
+        let completionExpectation = expectationWithDescription("completionHandler called")
+
+        let completionHandler: Result<Void> -> Void = { result in
+            if case .Failure(let error) = result {
+                XCTFail("Caching image failed: \(error)")
+            }
+
+            do {
+                let image = try cachedImageOnDiskForKey(key)
+
+                if let expectedImageData = UIImagePNGRepresentation(expectedImage), imageData = UIImagePNGRepresentation(image) {
+                    XCTAssertEqual(expectedImageData, imageData, "Cached image's data isn't equal to expected image's data")
+
+                    completionExpectation.fulfill()
+                }
+            } catch {
+                XCTFail("Reading cached image data failed: \(error)")
+            }
+        }
+
+        do {
+            try imageCache.cacheImage(expectedImage, forKey: key, onDisk: true, completionHandler: completionHandler)
+        } catch {
+            XCTFail("Caching image failed: \(error)")
+        }
+
+        waitForExpectationsWithTimeout(expectationTimeout, handler: nil)
+    }
 }
