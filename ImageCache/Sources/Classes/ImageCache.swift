@@ -133,4 +133,27 @@ public class ImageCache {
             completionHandler?(.Success())
         }
     }
+
+    /**
+    Remove cached image for key asynchronously
+
+    - Parameter key: Key for image
+    - Parameter fromDisk: If true, cached image will not only be removed from the memory cache, but also from the disk cache
+    - Parameter completionHandler: Called on main thread after cached image got removed
+
+    - Warning: Doesn't throw when error happens asynchronously. Check `.Success` or `.Failure` in `Result` parameter of `completionHandler` instead.
+    */
+    public func removeImageForKey(key: String, fromDisk: Bool, completionHandler: (Result<Void> -> Void)?) throws {
+        if key.isEmpty {
+            throw ImageCacheError.EmptyKey
+        }
+
+        memoryCache.removeObjectForKey(key)
+
+        if fromDisk {
+            try diskCache.removeDataForKey(key, completionHandler: completionHandler)
+        } else {
+            completionHandler?(.Success())
+        }
+    }
 }
