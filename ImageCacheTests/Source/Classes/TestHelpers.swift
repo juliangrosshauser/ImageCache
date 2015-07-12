@@ -65,3 +65,29 @@ func cachedImageOnDiskForKey(key: String) throws -> UIImage {
         throw ImageCacheError.CacheMiss
     }
 }
+
+func createImageInDiskCache(image: UIImage, forKey key: String) {
+    guard let imageData = UIImagePNGRepresentation(image) else {
+        XCTFail("Can't create image data")
+
+        // the following return statement will never be executed because of the above `XCTFail()`,
+        // but the Swift compiler is only happy when the `guard` body isn't falling through
+        return
+    }
+
+    if key.isEmpty {
+        XCTFail("Can't create image in disk cache with empty key")
+    }
+
+    if !imageCacheFileManager.fileExistsAtPath(imageCache.diskCachePath) {
+        do {
+            try imageCacheFileManager.createDirectoryAtPath(imageCache.diskCachePath, withIntermediateDirectories: true, attributes: nil)
+        } catch {
+            XCTFail("Creating cache directory failed: \(error)")
+        }
+    }
+
+    let filePath = imageCache.diskCachePath.stringByAppendingPathComponent(key)
+
+    XCTAssertTrue(imageCacheFileManager.createFileAtPath(filePath, contents: imageData, attributes: nil), "Creating image in disk cache failed")
+}
