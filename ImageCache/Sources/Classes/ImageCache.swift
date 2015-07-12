@@ -60,11 +60,7 @@ public class ImageCache {
         memoryCache.setObject(image, forKey: key, cost: imageData.length)
 
         if onDisk {
-            do {
-                try diskCache.cacheData(imageData, forKey: key, completionHandler: completionHandler)
-            } catch {
-                throw error
-            }
+            try diskCache.cacheData(imageData, forKey: key, completionHandler: completionHandler)
         } else {
             completionHandler?(.Success())
         }
