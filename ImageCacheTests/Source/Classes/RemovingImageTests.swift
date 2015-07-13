@@ -40,5 +40,32 @@ class RemovingImageTests: XCTestCase {
         
         XCTAssertFalse(imageCacheFileManager.fileExistsAtPath(imageCache.diskCachePath), "Disk cache directory shouldn't exist anymore")
     }
+    
+    func testRemoveImageForKeyFromDiskRemovesCachedImage() {
+        let key = "TestRemovingImage"
+        let image = testImageWithName("Square", fileExtension: .PNG)
+        
+        createImageInDiskCache(image, forKey: key)
+        
+        let completionExpectation = expectationWithDescription("completionHandler called")
+        
+        let completionHandler: Result<Void> -> Void = { result in
+            if case .Failure(let error) = result {
+                XCTFail("Removing cached image failed: \(error)")
+            }
+            
+            completionExpectation.fulfill()
+        }
+        
+        do {
+            try imageCache.removeImageForKey(key, fromDisk: true, completionHandler: completionHandler)
+        } catch {
+            XCTFail("Removing cached image failed: \(error)")
+        }
+        
+        waitForExpectationsWithTimeout(expectationTimeout, handler: nil)
+        
+        XCTAssertFalse(cachedImageExistsOnDiskForKey(key), "Cached image shouldn't exist anymore")
+    }
     }
 }
