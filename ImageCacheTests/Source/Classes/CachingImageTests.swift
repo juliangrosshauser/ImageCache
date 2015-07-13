@@ -113,6 +113,8 @@ class CachingImageTests: XCTestCase {
                     XCTAssertEqual(expectedImageData, imageData, "Cached image's data isn't equal to expected image's data")
 
                     completionExpectation.fulfill()
+                } else {
+                    XCTFail("Creating image data failed")
                 }
             } catch {
                 XCTFail("Reading cached image data failed: \(error)")
