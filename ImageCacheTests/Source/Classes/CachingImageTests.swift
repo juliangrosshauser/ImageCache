@@ -19,7 +19,7 @@ class CachingImageTests: XCTestCase {
     }
 
     func testCachingImageOnDiskCallsCompletionHandlerWithSuccess() {
-        let key = "TestCachingData"
+        let key = "TestCachingImage"
         let image = testImageWithName("Square", fileExtension: .PNG)
 
         let completionExpectation = expectationWithDescription("completionHandler called")
@@ -42,7 +42,7 @@ class CachingImageTests: XCTestCase {
     }
     
     func testCachingImageOnlyInMemoryCallsCompletionHandlerWithSuccess() {
-        let key = "TestCachingData"
+        let key = "TestCachingImage"
         let image = testImageWithName("Square", fileExtension: .PNG)
         
         let completionExpectation = expectationWithDescription("completionHandler called")
@@ -65,7 +65,7 @@ class CachingImageTests: XCTestCase {
     }
     
     func testCachingImageOnDiskCreatesFileInDiskCachePath() {
-        let key = "TestCachingData"
+        let key = "TestCachingImage"
         let image = testImageWithName("Square", fileExtension: .PNG)
         
         let completionExpectation = expectationWithDescription("completionHandler called")
@@ -96,7 +96,7 @@ class CachingImageTests: XCTestCase {
     }
 
     func testCachingImageOnDiskCreatesFileInDiskCachePathWithExpectedData() {
-        let key = "TestCachingData"
+        let key = "TestCachingImage"
         let expectedImage = testImageWithName("Square", fileExtension: .PNG)
 
         let completionExpectation = expectationWithDescription("completionHandler called")
