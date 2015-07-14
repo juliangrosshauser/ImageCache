@@ -46,6 +46,8 @@ public class ImageCache {
     - Parameter onDisk: Whether to cache image on disk
     - Parameter completionHandler: Called on main thread after image is cached
     
+    - Note: Caches image in it's PNG representation. See [`UIImagePNGRepresentation(_:)`](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIKitFunctionReference/#//apple_ref/c/func/UIImagePNGRepresentation) for more information.
+    
     - Warning: Doesn't throw when error happens asynchronously. Check `.Success` or `.Failure` in `Result` parameter of `completionHandler` instead.
     */
     public func cacheImage(image: UIImage, forKey key: String, onDisk: Bool, completionHandler: (Result<Void> -> Void)?) throws {
