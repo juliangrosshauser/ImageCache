@@ -46,6 +46,8 @@ public class ImageCache {
     - Parameter onDisk: Whether to cache image on disk
     - Parameter completionHandler: Called on main thread after image is cached
     
+    - Throws: `ImageCacheError.ImageDataError` if PNG representation of `image` parameter can't be created. `ImageCacheError.EmptyKey` if `key` parameter is empty.
+    
     - Note: Caches image in it's PNG representation. See [`UIImagePNGRepresentation(_:)`](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIKitFunctionReference/#//apple_ref/c/func/UIImagePNGRepresentation) for more information.
     
     - Warning: Doesn't throw when error happens asynchronously. Check `.Success` or `.Failure` in `Result` parameter of `completionHandler` instead.
@@ -75,6 +77,8 @@ public class ImageCache {
 
     - Parameter key: Key for image
     - Parameter completionHandler: Called on main thread with retrieved image or error as parameter
+    
+    - Throws: `ImageCacheError.EmptyKey` if `key` parameter is empty.
     
     - Note: Retrieves image with scale of device's screen.
 
@@ -134,6 +138,8 @@ public class ImageCache {
     - Parameter key: Key for image
     - Parameter fromDisk: If true, cached image will not only be removed from the memory cache, but also from the disk cache
     - Parameter completionHandler: Called on main thread after cached image got removed
+    
+    - Throws: `ImageCacheError.EmptyKey` if `key` parameter is empty.
 
     - Warning: Doesn't throw when error happens asynchronously. Check `.Success` or `.Failure` in `Result` parameter of `completionHandler` instead.
     */
